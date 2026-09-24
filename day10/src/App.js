@@ -1,31 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
-  let count = 0;
-  
-  const decrement = () =>{
-    count = count-1;
-    console.log("dectrement clicked");
-    
+  const[count, setCount] = useState(0);
+  const decrement = () => {
+    setCount(count-1);
   }
-  const reset = () =>{;
-    count = 0
-    console.log("reset clicked");
-    
+  const increment = () => {
+    setCount(count + 1);
   }
-  const increment = () =>{
-    count = count+1;
-    console.log("inctrement clicked");
-    
-  }
-  return (
-    <div>
-      <h1>Counter App</h1>
-      <div></div>
 
-      <button onClick={decrement}>-</button>
-      <button onClick={reset}>Reset</button>
+  const reset = () =>{
+    setCount(0);
+  }
+
+  return (
+    <div style={{textAlign: "center"}}>
+      <h1 style={{backgroundColor:"black",color:"white"}}>COUNTER APP</h1>
+      <div>{count}</div>
       <button onClick={increment}>+</button>
+      <button onClick={reset}>Reset</button>
+      <button onClick={decrement}>-</button>
     </div>
   )
 }
