@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import ImageSlider from './ImageSlider';
+import ImageRotation from './ImageRotator';
 
 const App = () => {
   const[count, setCount] = useState(0);
@@ -20,8 +22,12 @@ const App = () => {
       <button onClick={increment}>+</button>
       <button onClick={reset}>Reset</button>
       <button onClick={decrement}>-</button>
+      <ImageSlider></ImageSlider>
+      <ImageRotation></ImageRotation>
     </div>
   )
 }
+
+
 
 export default App
